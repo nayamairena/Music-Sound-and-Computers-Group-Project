@@ -1,6 +1,11 @@
 #start of something wonderful
 
-import numpy, tkinter, matlab, ast, inspect, sys
+import numpy as np
+import tkinter as tk
+import matlab as mb
+import ast
+import inspect as ins
+import sys
 
 
 #some kind of GUI for the user to use
@@ -31,3 +36,4 @@ if __name__ == "__main__":
   main()
   
 # Part B: The Musical Machina
+
