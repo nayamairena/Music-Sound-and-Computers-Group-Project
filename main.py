@@ -8,6 +8,8 @@ import numpy, tkinter, matlab, ast, inspect, sys
 #call in the code file and parse the file, by reading the function types , variable types, save into
 # an array maybe
 
+# Part A: The Parsing Code
+
 def parseMe():
   with open(sys.argv[1], "rb") as source:
     tree = ast.parse(source.read())
@@ -27,3 +29,5 @@ def main():
 
 if __name__ == "__main__":
   main()
+  
+# Part B: The Musical Machina
