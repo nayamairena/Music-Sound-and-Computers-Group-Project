@@ -8,6 +8,8 @@ import ast
 import inspect as ins
 import sys
 
+from sympy import monic
+
 
 #some kind of GUI for the user to use
 
@@ -20,11 +22,17 @@ class AssignmentVisitor(ast.NodeVisitor):
       for target in node.targets:
         if isinstance(target, ast.Name):
           print(target.id, end=' ')
+
   def visit_Import(self, node):      
     for alias in ast.walk(node):
       if isinstance(alias, ast.Import):
         for name in alias.names:
           print(name.name, end=' ')
+          
+  def visit_ImportFrom(self, node):
+    for module in ast.walk(node):
+      if isinstance(module, ast.ImportFrom):
+        print(module.module, end=' ')
           
 
 
