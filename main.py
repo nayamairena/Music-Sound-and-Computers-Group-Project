@@ -1,5 +1,6 @@
 #start of something wonderful
 
+from debugpy import trace_this_thread
 import numpy as np
 import tkinter as tk
 # import matlab.plotlib as mb -for extra cuteness at the end for graphs showing quantization of Python fundamental syntax.
@@ -19,9 +20,12 @@ class AssignmentVisitor(ast.NodeVisitor):
       for target in node.targets:
         if isinstance(target, ast.Name):
           print(target.id, end=' ')
-        elif isinstance(target, ast.FunctionType):
-          #print(target., end=' ')
-          pass
+  def visit_Import(self, node):      
+    for alias in ast.walk(node):
+      if isinstance(alias, ast.Import):
+        for name in alias.names:
+          print(name.name, end=' ')
+          
 
 
 def parseMe():
