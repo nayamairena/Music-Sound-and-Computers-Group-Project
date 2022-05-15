@@ -16,7 +16,9 @@ def makeMusic():
   pass
 
 def main():
-  pass
+  parseMe()
+  makeMusic()
+  
 
 if __name__ == "__main__":
   main()
