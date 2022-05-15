@@ -2,7 +2,7 @@
 
 import numpy as np
 import tkinter as tk
-import matlab as mb
+# import matlab.plotlib as mb -for extra cuteness at the end for graphs showing quantization of Python fundamental syntax.
 import ast
 import inspect as ins
 import sys
