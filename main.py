@@ -1,6 +1,6 @@
 #start of something wonderful
 
-import numpy, tkinter, matlab, ast, inspect
+import numpy, tkinter, matlab, ast, inspect, sys
 
 
 #some kind of GUI for the user to use
@@ -8,7 +8,9 @@ import numpy, tkinter, matlab, ast, inspect
 #call in the code file and parse the file, by reading the function types , variable types, save into
 # an array maybe
 def parseMe():
-  pass
+  with open(sys.argv[1], "rb") as source:
+    tree = ast.parse(source.read())
+
 
 #create an array of notes?
 #apply effects to sections of array?
