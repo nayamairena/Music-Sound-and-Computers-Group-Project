@@ -1,5 +1,7 @@
 #start of something wonderful
 
+from tokenize import Name
+from debugpy import trace_this_thread
 import numpy, tkinter, matlab, ast, inspect, sys
 
 
@@ -9,12 +11,21 @@ import numpy, tkinter, matlab, ast, inspect, sys
 # an array maybe
 
 # Part A: The Parsing Code
+class AssignmentVisitor(ast.NodeVisitor):
+  def visit_Assign(self, node):
+      for target in node.targets:
+        if isinstance(target, ast.Name):
+          print(target.id, end=' ')
+        elif isinstance(target, ast.FunctionType):
+          #print(target., end=' ')
+          pass
+
 
 def parseMe():
   with open(sys.argv[1], "rb") as source:
     tree = ast.parse(source.read())
-    print(ast.dump(tree))
-    
+  #print(ast.For(tree))
+  AssignmentVisitor().visit(tree)
 
 
 #create an array of notes?
