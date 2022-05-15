@@ -7,9 +7,12 @@ import numpy, tkinter, matlab, ast, inspect, sys
 
 #call in the code file and parse the file, by reading the function types , variable types, save into
 # an array maybe
+
 def parseMe():
   with open(sys.argv[1], "rb") as source:
     tree = ast.parse(source.read())
+    print(ast.dump(tree))
+    
 
 
 #create an array of notes?
