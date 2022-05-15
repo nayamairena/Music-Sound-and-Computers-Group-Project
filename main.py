@@ -18,6 +18,12 @@ from sympy import monic
 
 # Part A: The Parsing Code
 class AssignmentVisitor(ast.NodeVisitor):
+  """
+  def visit_FunctionDef(self, node):
+    for defi in ast.walk(node):
+      if isinstance(defi, ast.FunctionDef):
+        print(defi.name, end=' ')
+  """
   def visit_Assign(self, node):
       for target in node.targets:
         if isinstance(target, ast.Name):
@@ -28,13 +34,14 @@ class AssignmentVisitor(ast.NodeVisitor):
       if isinstance(alias, ast.Import):
         for name in alias.names:
           print(name.name, end=' ')
-          
+
   def visit_ImportFrom(self, node):
     for module in ast.walk(node):
       if isinstance(module, ast.ImportFrom):
         print(module.module, end=' ')
-          
-
+   
+  
+  
 
 def parseMe():
   with open(sys.argv[1], "rb") as source:
