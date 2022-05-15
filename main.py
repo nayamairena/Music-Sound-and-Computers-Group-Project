@@ -1,8 +1,11 @@
 #start of something wonderful
 
-from tokenize import Name
-from debugpy import trace_this_thread
-import numpy, tkinter, matlab, ast, inspect, sys
+import numpy as np
+import tkinter as tk
+# import matlab.plotlib as mb -for extra cuteness at the end for graphs showing quantization of Python fundamental syntax.
+import ast
+import inspect as ins
+import sys
 
 
 #some kind of GUI for the user to use
@@ -42,3 +45,4 @@ if __name__ == "__main__":
   main()
   
 # Part B: The Musical Machina
+
